@@ -1,0 +1,118 @@
+# Windows 10 classes whose real implementation needs a Windows 10 service: inert stand-ins (wxrstub.dll)
+# background tasks (biwinrt / Windows.ApplicationModel.Background.TimeBroker -> Background Broker service)
+Windows.ApplicationModel.Background.AlarmApplicationManager
+Windows.ApplicationModel.Background.BackgroundExecutionManager
+Windows.ApplicationModel.Background.BackgroundTaskBuilder
+Windows.ApplicationModel.Background.BackgroundTaskRegistration
+Windows.ApplicationModel.Background.SystemTrigger
+Windows.ApplicationModel.Background.TimeTrigger
+Windows.ApplicationModel.Background.ToastNotificationActionTrigger
+# notifications (wpnapps -> Windows Push Notifications service)
+Windows.UI.Notifications.BadgeNotification
+Windows.UI.Notifications.BadgeUpdateManager
+Windows.UI.Notifications.ScheduledTileNotification
+Windows.UI.Notifications.ScheduledToastNotification
+Windows.UI.Notifications.TileNotification
+Windows.UI.Notifications.TileUpdateManager
+Windows.UI.Notifications.ToastNotification
+Windows.UI.Notifications.ToastNotificationManager
+# credentials / power / settings pane (Win10 services or shell): inert
+Windows.Security.Credentials.PasswordVault
+Windows.System.Power.PowerManager
+Windows.UI.ApplicationSettings.SettingsCommand
+# app data folder paths (Win10's derives them from package infrastructure we lack: 0x80073D54): getters hand-written in src\rt_appdatapaths.c
+Windows.Storage.AppDataPaths
+# media transport controls (Win10 volume flyout / media keys): the real one needs a Win10 service (0x80070424)
+Windows.Media.SystemMediaTransportControls
+Windows.Media.SystemMediaTransportControlsDisplayUpdater
+Windows.Media.MusicDisplayProperties
+Windows.Media.VideoDisplayProperties
+Windows.Media.ImageDisplayProperties
+Windows.Media.SystemMediaTransportControlsTimelineProperties
+# capability checks (music library ...): the real one needs Win10's capability access service. CheckAccess = Allowed (src\rt_extra.c)
+Windows.Security.Authorization.AppCapabilityAccess.AppCapability
+# Timeline (Win10 1803+): GetForCurrentView threw E_INVALIDARG; nothing on Win7 asks for activities
+Windows.ApplicationModel.UserActivities.UserActivityRequestManager
+# input pane / touch keyboard view: the real GetForUIContext fail-fasts on our minimal UIContext (Media Player TextBoxes). Win7 has no input pane.
+Windows.UI.ViewManagement.Core.CoreInputView
+# pickers: Win7's own Explorer dialogs (IFileOpenDialog), results from Win10 Windows.Storage (src\rt_pickers.c)
+Windows.Storage.Pickers.FileOpenPicker
+Windows.Storage.Pickers.FolderPicker
+Windows.Storage.Pickers.FileSavePicker
+# recent files / future-access lists: the real ones need Win10's state repository service (0x80070426). Empty lists for now.
+Windows.Storage.AccessCache.StorageApplicationPermissions
+# DisplayRequest: VxKex's placeholder object made Media Player's playback code fail a cast (InvalidCastException a second into playback).
+# RequestActive/RequestRelease keep the display on through SetThreadExecutionState (src\rt_extra.c)
+Windows.System.Display.DisplayRequest
+# CastingDevicePicker: no casting on Win7, an inert picker (VxKex's placeholder was handed out before)
+Windows.Media.Casting.CastingDevicePicker
+# user accounts (Windows.System.User needs the Win10 user manager): Calculator's User.GetFromId(id) -> null = no per-user policy
+Windows.System.User
+# app sound level: the real broker asks the Win10 audio policy (AudioSrv RPC Win7 lacks); the audio renderer reads it when it rebuilds its device (playback-rate change) and a failure became "We can't find an audio playback device". Always Full.
+Windows.Media.Core.Preview.SoundLevelBroker
+# StorageLibrary: Win10's GetLibraryAsync completes with E_NOTIMPL on Win7 (library code + picker broker). Backed by Win7 shell libraries (src\rt_library.c).
+Windows.Storage.StorageLibrary
+# Launcher: Win10 forwards launches to a broker we do not have (Media Player "open file location" did nothing). src\rt_launcher.c: ShellExecute / explorer /select.
+Windows.System.Launcher
+# AppServiceConnection: the KxCom placeholder made the Store fail-fast (E_NOINTERFACE on its cast). OpenAsync -> AppUnavailable (src\rt_extra.c).
+Windows.ApplicationModel.AppService.AppServiceConnection
+# diagnostics level (Win10 telemetry settings service): inert - collection level Security, nothing allowed. The Store's launch threw on the KxCom placeholder.
+Windows.System.Profile.PlatformDiagnosticsAndUsageDataSettings
+# S mode / Store configuration (Win10 policy + Store client services): inert stand-ins - S mode off, no OEM/operator configuration.
+# Their factories lacked the statics interfaces; a Store static constructor that touches them failed, and the home page became the "unavailable" page.
+Windows.System.Profile.WindowsIntegrityPolicy
+Windows.ApplicationModel.Store.Preview.StoreConfiguration
+Windows.Gaming.Input.Gamepad
+# Store product page: these only had the KxCom placeholder (casts failed, navigation died)
+Windows.Networking.Proximity.ProximityDevice
+Windows.System.Profile.RetailInfo
+Windows.System.UserPicker
+Windows.Devices.SmartCards.SmartCardEmulator
+Windows.Networking.NetworkOperators.MobileBroadbandModem
+Windows.Graphics.Holographic.HolographicSpace
+# Store install work: package inventory + install queue. Win10's talk to AppXSvc / InstallService (RPC) which Win7 lacks; they only
+# had the KxCom placeholder. Inert first (no packages, empty queue) to see what the Store asks; real answers come from the WXR repository.
+Windows.Management.Deployment.PackageManager
+# App Installer's install path (src\rt_deploy.c): PackageManager.AddPackageByUriAsync(uri, AddPackageOptions) -> wxrpkg add.
+# Without AddPackageOptions App Installer got KxCom's bogus factory and crashed; DeploymentResult is what the operation hands back.
+Windows.Management.Deployment.AddPackageOptions
+~Windows.Management.Deployment.DeploymentResult
+Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallManager
+Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallOptions
+Windows.ApplicationModel.Store.Preview.InstallControl.AppUpdateOptions
+# Package objects handed out by the PackageManager stand-in (src\rt_packages.c). Hidden: Package.Current stays Windows.ApplicationModel.dll's.
+~Windows.ApplicationModel.Package
+~Windows.ApplicationModel.PackageId
+~Windows.ApplicationModel.PackageStatus
+# launchable entries of those packages (Package.GetAppListEntries -> the Store's "Open"): src\rt_packages.c
+~Windows.ApplicationModel.Core.AppListEntry
+~Windows.ApplicationModel.AppDisplayInfo
+# install queue objects of the AppInstallManager stand-in (src\rt_install.c)
+~Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallItem
+~Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallStatus
+~Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallManagerItemEventArgs
+# sign-in: the system (device) authenticator. Win10's talks to the Microsoft Account service (wlidsvc); only KxCom's
+# placeholder existed ("HOST fallback 0x80004002", 210 times per session). First a logging stand-in to learn which tickets the Store asks for.
+Windows.Security.Authentication.OnlineId.OnlineIdSystemAuthenticator
+Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest
+~Windows.Security.Authentication.OnlineId.OnlineIdSystemTicketResult
+~Windows.Security.Authentication.OnlineId.OnlineIdSystemIdentity
+~Windows.Security.Authentication.OnlineId.OnlineIdServiceTicket
+# WAM user sign-in (Win10: wlidsvc / TokenBroker). The Store asks WebAuthenticationCoreManager for a user WLID ticket for the order
+# step (purchase.mp.microsoft.com); without a signed-in WebAccount it sends only the device token -> 401. Implemented in src\rt_user.c.
+Windows.Security.Authentication.Web.Core.WebAuthenticationCoreManager
+Windows.Security.Authentication.Web.Core.WebTokenRequest
+~Windows.Security.Authentication.Web.Core.WebTokenRequestResult
+~Windows.Security.Authentication.Web.Core.WebTokenResponse
+~Windows.Security.Authentication.Web.Core.WebProviderError
+Windows.Security.Credentials.WebAccountProvider
+~Windows.Security.Credentials.WebAccount
+# The account manager UI (Win10: the system account pane). The Store's "Sign in" calls AccountsSettingsPane.Show*; we fire its
+# AccountCommandsRequested, read the provider command the app appends (needs a REAL appendable vector - rt_core's is inert), and
+# invoke it so the app drives WebAuthenticationCoreManager.RequestTokenAsync with its own client id/scope. src\rt_user.c.
+Windows.UI.ApplicationSettings.AccountsSettingsPane
+~Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs
+Windows.UI.ApplicationSettings.WebAccountProviderCommand
+Windows.UI.ApplicationSettings.WebAccountCommand
+# Win10 1803 app instancing: Windows App SDK's AppInstance.GetActivatedEventArgs asks it (packaged apps); stub = no activation args -> plain launch (WinUI 3 Gallery)
+Windows.ApplicationModel.AppInstance

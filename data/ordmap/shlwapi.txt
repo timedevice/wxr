@@ -1,0 +1,4 @@
+172 IUnknown_GetWindow
+204 SHIsChildOrSelf
+219 QISearch
+225 SHStripMneumonicW

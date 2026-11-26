@@ -1,0 +1,2 @@
+2529 NtUserDisableImmersiveOwner
+2574 IsShellManagedWindow

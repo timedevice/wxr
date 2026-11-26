@@ -1,0 +1,41 @@
+/* generated */
+#pragma once
+extern const void *const DCVT_Dev1[];
+extern const void *const DCVT_Dev2[];
+extern const void *const DCVT_Desktop[];
+extern const void *const DCVT_Dev3[];
+extern const void *const DCVT_Interop[];
+extern const void *const DCVT_Vis[];
+extern const void *const DCVT_Vis3[];
+extern const void *const DCVT_Surf[];
+extern const void *const DCVT_VSurf[];
+extern const void *const DCVT_SurfInt[];
+extern const void *const DCVT_Fact[];
+extern const void *const DCVT_Target[];
+extern const void *const DCVT_Partner[];
+extern const void *const DCVT_Internal[];
+extern const void *const DCVT_Debug[];
+extern const void *const DCVT_Priv5[];
+extern const void *const DCVT_Priv[];
+extern const void *const DCVT_Q0[];
+extern const void *const DCVT_Q1[];
+extern const void *const DCVT_Q2[];
+extern const void *const DCVT_Q3[];
+extern const void *const DCVT_Q4[];
+extern const void *const DCVT_Q5[];
+extern const void *const DCVT_Q6[];
+extern const void *const DCVT_Q7[];
+extern const void *const DCVT_Q8[];
+extern const void *const DCVT_Q9[];
+extern const void *const DCVT_Q10[];
+extern const void *const DCVT_Q11[];
+extern const void *const DCVT_Q12[];
+extern const void *const DCVT_Q13[];
+extern const void *const DCVT_Q14[];
+extern const void *const DCVT_Q15[];
+extern const void *const DCVT_Q16[];
+extern const void *const DCVT_Q17[];
+extern const void *const DCVT_Q18[];
+extern const void *const DCVT_Q19[];
+extern const void *const *const DCVT_Q[];
+#define DC_NPROBE 20

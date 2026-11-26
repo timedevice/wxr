@@ -1,0 +1,1 @@
+WUIDRequest.xml: from StoreLib (https://github.com/StoreDev/StoreLib, branch Public, StoreLib/Xml/WUIDRequest.xml), Mozilla Public License 2.0 (LICENSE). Unmodified. Shipped as <layer>\data\wu_sync_request.xml and read by wxrpkg store (pkg\src\store.inc).

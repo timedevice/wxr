@@ -1,0 +1,8 @@
+2589 NtUserGetInteractiveControlInfo
+2590 NtUserGetInteractiveControlDeviceInfo
+2591 NtUserSendInteractiveControlHapticsReport
+2592 NtUserSetInteractiveControlFocus
+2593 NtUserInteractiveControlQueryUsage
+2594 NtUserSetInteractiveCtrlRotationAngle
+2597 SetCITInfo
+2587 WxrDManipRegisterDispatchHooks

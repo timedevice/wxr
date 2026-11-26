@@ -1,0 +1,5 @@
+# The repository stores LF; working copies get CRLF (Windows project). Binary files are detected and left alone.
+* text=auto eol=crlf
+*.png binary
+*.jpg binary
+*.ico binary

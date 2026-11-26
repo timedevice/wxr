@@ -1,0 +1,8 @@
+2586 NtUserSetInputServiceState
+2633 NtUserCreateActivationObject
+2647 NtUserConfigureActivationObject
+2648 NtUserDestroyActivationObject
+2650 NtUserGetInputContainerId
+2653 NtUserGetPointerProprietaryId
+2656 NtUserEnableMouseInPointerForWindow
+2657 NtUserSetProcessMousewheelRoutingMode

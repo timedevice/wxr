@@ -1,0 +1,4 @@
+2609 NtUserGetInteractiveCtrlSupportedWaveforms
+2614 NtUserGetResizeDCompositionSynchronizationObject
+2615 NtUserEnableResizeLayoutSynchronization
+2617 NtUserIsResizeLayoutSynchronizationEnabled

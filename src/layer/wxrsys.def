@@ -1,0 +1,49 @@
+LIBRARY wxrsys.dll
+EXPORTS
+CStdStubBuffer_AddRef = rpcrt4.CStdStubBuffer_AddRef
+CStdStubBuffer_Connect = rpcrt4.CStdStubBuffer_Connect
+CStdStubBuffer_CountRefs = rpcrt4.CStdStubBuffer_CountRefs
+CStdStubBuffer_DebugServerQueryInterface = rpcrt4.CStdStubBuffer_DebugServerQueryInterface
+CStdStubBuffer_DebugServerRelease = rpcrt4.CStdStubBuffer_DebugServerRelease
+CStdStubBuffer_Disconnect = rpcrt4.CStdStubBuffer_Disconnect
+CStdStubBuffer_Invoke = rpcrt4.CStdStubBuffer_Invoke
+CStdStubBuffer_IsIIDSupported = rpcrt4.CStdStubBuffer_IsIIDSupported
+CStdStubBuffer_QueryInterface = rpcrt4.CStdStubBuffer_QueryInterface
+CStdStubBuffer2_Connect = rpcrt4.CStdStubBuffer_Connect
+CStdStubBuffer2_CountRefs = rpcrt4.CStdStubBuffer_CountRefs
+CStdStubBuffer2_Disconnect = rpcrt4.CStdStubBuffer_Disconnect
+CStdStubBuffer2_QueryInterface = rpcrt4.CStdStubBuffer_QueryInterface
+NdrCStdStubBuffer_Release = rpcrt4.NdrCStdStubBuffer_Release
+NdrCStdStubBuffer2_Release = rpcrt4.NdrCStdStubBuffer2_Release
+CoreUICreate = g_CoreUICreate
+CoreUICallCreateConversationHost = g_CoreUICallCreateConversationHost
+CoreUICallSend = g_CoreUICallSend
+CoreUICallCreateEndpointHost = g_CoreUICallCreateEndpointHost
+CoreUICallCreateEndpointHostWithSendPriority = g_CoreUICallCreateEndpointHostWithSendPriority
+CoreUICallReceive = g_CoreUICallReceive
+CoreUIOpenExisting = g_CoreUIOpenExisting
+GetPointerDeviceProperties = g_GetPointerDeviceProperties
+GetRawPointerDeviceData = g_GetRawPointerDeviceData
+CreateDCompositionHwndTarget = g_CreateDCompositionHwndTarget
+DestroyDCompositionHwndTarget = g_DestroyDCompositionHwndTarget
+FreeTransientObjectSecurityDescriptor = g_FreeTransientObjectSecurityDescriptor
+QueryTransientObjectSecurityDescriptor = g_QueryTransientObjectSecurityDescriptor
+GetSecurityInfo = g_GetSecurityInfo
+GetProcAddress = WxrGetProcAddress
+CreateWindowExW = WxrCreateWindowExW
+CreateFileMappingW = WxrCreateFileMappingW
+OpenFileMappingW = WxrOpenFileMappingW
+RegOpenKeyExW = WxrRegOpenKeyExW
+
+LoadLibraryW = WxrLoadLibraryW
+SetLayeredWindowAttributes = WxrSetLayeredWindowAttributes
+WxrUnimpl
+    CreateUri = WxrCreateUri
+    GetDoubleClickTime = WxrGetDoubleClickTime
+FindResourceExW = WxrFindResourceExW
+FindResourceW = WxrFindResourceW
+LoadResource = WxrLoadResource
+SizeofResource = WxrSizeofResource
+LoadStringW = WxrLoadStringW
+SHGetKnownFolderPath = shell32.SHGetKnownFolderPath
+WxrGetActivatedEventArgs

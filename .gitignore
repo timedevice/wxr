@@ -1,0 +1,33 @@
+# local, not part of the repository:
+# deps = toolchain, winmd metadata, PDBs, Win10 dbghelp (see README.md); out/obj = build; logs = run logs;
+# docs_old = pre-WXR documentation, kept locally until the docs are rewritten
+/deps/
+/out/
+/obj/
+/logs/
+/docs_old/
+
+# build products and caches
+*.o
+*.a
+*.exe
+*.dll
+*.pdb
+*.log
+*.bak*
+__pycache__/
+*.pyc
+winmd.cache
+
+# sign-in material must never be committed
+src/msa/**/*.out
+src/msa/**/*.ini
+src/msa/**/*.json
+src/msa/*_ticket.ps1
+
+# Visual Studio (src/installer)
+.vs/
+*.user
+*.suo
+src/installer/**/bin/
+src/installer/**/obj/

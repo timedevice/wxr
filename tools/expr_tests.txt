@@ -1,0 +1,35 @@
+# Composition expressions seen in app logs (the Store) plus language coverage. Checked by exprcheck.exe (syntax only).
+visual0.ActualOffset.Y
+!(-scrollProperties.Translation.Y > this.Target.OffsetFromScroll + this.Target.Size.Y + this.Target.Buffer || -scrollProperties.Translation.Y < this.Target.OffsetFromScroll - this.Target.Buffer)
+manipTransform.Translation+offset
+manipTransform.Pan+offset
+manipTransform.CenterPoint+offset
+manipTransform.Scale
+Round((_interactionTracker.Position.X - this.Target.SnapPointOffset) / this.Target.SnapPointInterval)
+Round((_interactionTracker.NaturalRestingPosition.X - this.Target.SnapPointOffset) / this.Target.SnapPointInterval)
+-_interactionTracker.Position.X + this.Target.AnimationTranslation
+hover.Point
+this.Target.Position.XY - Vector2(36, 257.89203) - (ShadowPointerAnimationTargetElement.ActualSize * 0.5)
+Clamp(Lerp(1, 0, (Length(_pointerPositionSet.ActualPosition) - 400) / 500), 0, 1)
+((((((((((((((((((((((A.Offset + B.Offset) + C.Offset) + D.Offset) + E.Offset) + F.Offset) + G.Offset) + H.Offset) + I.Offset) + J.Offset) + K.Offset) + L.Offset) + M.Offset) + N.Offset) + O.Offset) + P.Offset) + Q.Offset) + R.Offset) + S.Offset) + T.Offset) + U.Offset) + V.Offset) + W.Offset).X
+round((clamp((((A.Offset + B.Offset) + C.Offset).X), 0, 100)) / 2) * 2
+transform*manipTransform.Matrix
+Matrix3x2.CreateFromTranslation(Vector2(a.X, a.Y)) * Matrix3x2.CreateScale(s)
+Matrix4x4.CreateFromTranslation(Vector3(1, 2, 3)) * Matrix4x4.CreateScale(2)
+Matrix4x4(Matrix3x2.CreateRotation(Pi / 2))
+this.StartingValue + Vector3(0, 10, 0)
+this.FinalValue
+x > 0 ? Vector3(1, 1, 1) : Vector3(0, 0, 0)
+a.X == b.X && !(c.Y != 2) || d
+ColorLerp(ColorRgb(255, 0, 0, 0), color, t)
+Lerp(a, b, Clamp(p * 2, 0, 1))
+Vector3.One * Scale(v, 2).X + Vector3.Zero
+Normalize(Vector2(3, 4)).X + Distance(a.Offset, b.Offset) + Length(v)
+Mod(x, 360) % 90 + Pow(2, 3) + Max(a, b) - Min(a, b)
+Quaternion.CreateFromAxisAngle(Vector3(0, 0, 1), ToRadians(45))
+Concatenate(q1, Quaternion.Identity)
+Transform(Vector2(1, 2), m)
+m._11 + m._22 + m.M31
+Sin(t) + Cos(t) + Tan(t) + Asin(t) + Acos(t) + Atan(t) + Sqrt(t) + Square(t) + Abs(t) + Floor(t) + Ceil(t) + Ln(t) + Log10(t) + ToDegrees(t)
+1.5f + .5 - 2e2
+props.Value.XY.X

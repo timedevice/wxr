@@ -1,0 +1,3 @@
+2523 InternalGetWindow
+2503 WxrDManipRegisterWindow
+2504 WxrDManipUnregisterWindow

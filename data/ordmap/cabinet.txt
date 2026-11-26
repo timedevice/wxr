@@ -1,0 +1,3 @@
+40 CreateDecompressor
+43 Decompress
+45 CloseDecompressor

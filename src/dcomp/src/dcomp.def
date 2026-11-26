@@ -1,0 +1,45 @@
+LIBRARY dcomp.dll
+EXPORTS
+    DCompositionCreateDevice
+    DCompositionCreateDevice2
+    DCompositionCreateDevice3
+    DCompositionCreateSurfaceHandle
+    DllGetActivationFactory
+    DllCanUnloadNow
+    DllGetClassObject
+    DwmFlush
+    DwmEnableMMCSS
+    DwmpEnableDDASupport
+    DCompositionAttachMouseDragToHwnd
+    DCompositionAttachMouseWheelToHwnd
+    CompileEffectDescription
+    CreateEffectDescription
+    DeserializeEffectDescription
+    SerializeEffectDescription
+    WxrDcomp_SetTargetWindow @3001
+    WxrDcomp_SnapshotToPng @3002
+    WxrDcomp_RenderNow @3003
+    WxrDcomp_ExprCheck @3004
+    comp_engine_GetFactory @3006
+    dcOrd_1017 @1017 NONAME
+    dcOrd_1019 @1019 NONAME
+    dcOrd_1028 @1028 NONAME
+    dcOrd_1031 @1031 NONAME
+    dcOrd_1033 @1033 NONAME
+    dcOrd_1038 @1038 NONAME
+    dcOrd_1039 @1039 NONAME
+    dcOrd_1040 @1040 NONAME
+    dcOrd_1041 @1041 NONAME
+    dcOrd_1042 @1042 NONAME
+    dcOrd_1043 @1043 NONAME
+    dcOrd_1044 @1044 NONAME
+    dcOrd_1045 @1045 NONAME
+    dcOrd_1046 @1046 NONAME
+    dcOrd_1047 @1047 NONAME
+    dcOrd_1048 @1048 NONAME
+    dcOrd_1049 @1049 NONAME
+    dcOrd_1050 @1050 NONAME
+    dcOrd_1051 @1051 NONAME
+    dcOrd_2006 @2006 NONAME
+    dcOrd_2502 @2502 NONAME
+    dcOrd_2503 @2503 NONAME

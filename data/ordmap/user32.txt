@@ -1,0 +1,9 @@
+2521 GetProcessUIContextInformation
+2522 NtUserSetBrokeredForeground
+2529 NtUserDisableImmersiveOwner
+2561 EnableMouseInPointerForThread
+2565 IsCurrentProcessGdiScaledX
+2571 SetCoreWindow
+2573 IsShellFrameWindow
+2574 IsShellManagedWindow
+2582 ScheduleDispatchNotification

@@ -1,0 +1,2 @@
+2541 NtUserGetQueueStatusReadonly
+2558 TransformRect

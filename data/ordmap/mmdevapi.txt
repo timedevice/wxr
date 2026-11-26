@@ -1,0 +1,4 @@
+10 #10
+11 #11
+23 mmdDevGetMMDeviceFromInterfaceId
+25 mmdDevGetMMDeviceIdFromInterfaceId

@@ -1,0 +1,16 @@
+1 CoreRegisterApplicationService
+2 CoreQueryApplicationService
+3 CoreIsApplicationServiceSupported
+4 CoreUnregisterApplicationService
+5 CoreUnregisterAllApplicationServices
+6 CoreRegisterWindowService
+7 CoreQueryWindowService
+8 CoreIsWindowServiceSupported
+9 CoreUnregisterWindowService
+10 CoreUnregisterAllWindowServices
+11 CoreEnumWindowServices
+12 IsImmersiveWindow
+501 ?CreateCoreApplicationViewTitleBar@@YAJPEAUITitleBarClientAdapter@WindowManagement@ApplicationModel@Internal@Windows@@PEAUHWND__@@PEAPEAUICoreApplicationViewTitleBar@Core@35@@Z
+502 ?CreateApplicationViewTitleBar@@YAJPEAUITitleBarClientAdapter@WindowManagement@ApplicationModel@Internal@Windows@@PEAUHWND__@@PEAPEAUIApplicationViewTitleBar@ViewManagement@UI@5@@Z
+503 ?DesktopLegacySetPreferredMinSize@@YAJPEAUHWND__@@USize@Foundation@Windows@@@Z
+504 ?DesktopLegacySetTitle@@YAJPEAUHSTRING__@@PEAUHWND__@@@Z

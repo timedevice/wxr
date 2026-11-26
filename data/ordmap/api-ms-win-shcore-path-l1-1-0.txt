@@ -1,0 +1,3 @@
+170 PathIsNetworkPathW
+172 PathBuildRootW
+173 PathBuildRootA

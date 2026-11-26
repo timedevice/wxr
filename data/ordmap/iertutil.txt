@@ -1,0 +1,4 @@
+32 ?IsProtectedModeProcess@@YAJXZ
+134 ?SetWindowsHandleAccess@@YAJPEAXKK@Z
+791 ?IEConfiguration_GetBool@@YA_NW4IEConfigurationID@@@Z
+811 SetWebPlatformSecurityManagerFactoryCallback

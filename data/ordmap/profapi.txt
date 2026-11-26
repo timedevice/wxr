@@ -1,0 +1,3 @@
+104 GetBasicProfileFolderPath
+113 GetAppContainerSpecificSubPath
+114 GetAppContainerRegistryHandleFromName

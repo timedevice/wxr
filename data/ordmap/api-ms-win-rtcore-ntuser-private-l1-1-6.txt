@@ -1,0 +1,2 @@
+2640 ?CreatePalmRejectionDelayZone@@YAJPEAUIInspectable@@PEBUtagRECT@@HPEAK@Z
+2645 ?DestroyPalmRejectionDelayZone@@YAJK@Z
