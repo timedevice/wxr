@@ -7,7 +7,7 @@ Windows eXtended Runtime is a project that attempts to run UWP, Windows App SDK 
 To run WXR you need:
 - Windows 7 Service Pack 1 (64-bit)
 - Platform Update for Windows 7 (KB2670838)
-- VxKex (https://github.com/vxiiduu/VxKex), tested with 1.2.1.2229
+- VxKex (https://github.com/i486/VxKex), tested with 1.2.1.2229
 - A Windows 10 22H2 64-bit ISO. You can get one at https://www.microsoft.com/en-gb/software-download/windows10: the page downloads the Media Creation Tool, which can create the ISO. Build 19045.3803 is the tested one; setup accepts other 22H2 builds with a warning.
 
 Download the latest package from Releases and run `WxrInstaller.exe` (the GUI). It uses `wxrsetup.exe`, the command-line setup program, which is included too. Setup checks your computer first and tells you what is missing.
@@ -30,7 +30,7 @@ Custom install (and Repair or Change later) lets you choose:
 WXR comes without apps. You can get them in these ways:
 - From the **Microsoft Store**.
 - With `wxrpkg store <ProductId>`, which installs free apps without an account.
-- From **.msix / .appxbundle** files: open them with App Installer or install them with `wxrpkg add`.
+- From **.msix / .appxbundle** files: open them with App Installer or install them with `wxrpkg add`, or with `Add-AppxPackage` in PowerShell.
 
 Installed apps appear in the Start menu under **WXR**. **WXR > Tools** has **Uninstall apps** and, with the sign-in component, **WXR Sign-in**.
 
@@ -46,7 +46,7 @@ Installed apps appear in the Start menu under **WXR**. **WXR > Tools** has **Uni
 | App Installer | Installs .msix / .appxbundle files. |
 | Minecraft for Windows (Bedrock) | Playable with keyboard and mouse. No audio, internet connections, logging in or controllers; it runs as a trial. It cannot be installed from the Store. Add it with `wxrpkg add` from an existing installation (the XboxGames folder of a Windows 10 PC), with the GDK component installed. |
 
-insert big ol' wide screenshot here later
+![Showcase](docs/images/showcaseimage1.png)
 
 ## Commands
 
